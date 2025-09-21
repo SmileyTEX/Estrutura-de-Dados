@@ -11,20 +11,32 @@
  * TODO To change the template for this generated type comment go to
  * Window - Preferences - Java - Code Style - Code Templates
  */
-public class testePilha {
+public class TestePilha {
+    public static void main(String[] args) {
+        PilhaRubroNegroArray pilha = new PilhaRubroNegroArray(2);
 
-	public static void main(String[] args) {		
-		Integer[] b = new Integer[1];		
-		PilhaArray pp=new PilhaArray(1,0);
-		System.out.println("inserindo");
-		for(int f=0;f<10;f++){
-		  System.out.println(f);		  
-		  pp.push(new Integer(f));
-		}
-		System.out.println("retirando");
-		for(int f=0;f<10;f++){
-			  System.out.print(f);
-			  System.out.println(" - "+pp.pop());
-		}
-	}
+        System.out.println("Inserindo na vermelha:");
+        for (int f = 0; f < 10; f++) {
+            System.out.println("Push Vermelha -> " + f);
+            pilha.pushVermelha(f);
+        }
+
+        System.out.println("\nRetirando da vermelha:");
+        for (int f = 0; f < 10; f++) {
+            System.out.print("Pop Vermelha " + f);
+            System.out.println(" -> " + pilha.popVermelha());
+        }
+
+        System.out.println("\nInserindo na preta:");
+        for (int f = 0; f < 10; f++) {
+            System.out.println("Push Preta -> " + f);
+            pilha.pushPetra(f);
+        }
+
+        System.out.println("\nRetirando da preta:");
+        for (int f = 0; f < 10; f++) {
+            System.out.print("Pop Preta " + f);
+            System.out.println(" -> " + pilha.popPreta());
+        }
+    }
 }
