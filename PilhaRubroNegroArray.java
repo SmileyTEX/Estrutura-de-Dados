@@ -7,22 +7,22 @@ public class PilhaRubroNegroArray implements PilhaRubroNegro {
     public PilhaRubroNegroArray(int cap) {
         capacidade = cap;
         a = new Object[capacidade];
-        topoVermelha = -1;       
-        topoPreta = capacidade;  
+        topoVermelha = -1;
+        topoPreta = capacidade;
     }
 
-   
+
     private void redimensiona(int novaCapacidade) {
         Object[] b = new Object[novaCapacidade];
         int tamVermelha = sizeVermelha();
         int tamPreta = sizePetra();
 
-        
+
         for (int i = 0; i < tamVermelha; i++) {
             b[i] = a[i];
         }
 
-        
+
         int inicioPreta = novaCapacidade - tamPreta;
         for (int i = 0; i < tamPreta; i++) {
             b[inicioPreta + i] = a[topoPreta + i];
@@ -34,12 +34,12 @@ public class PilhaRubroNegroArray implements PilhaRubroNegro {
         a = b;
     }
 
-    
+
     private void verificaCapacidade() {
         if (topoVermelha + 1 == topoPreta) {
-            redimensiona(capacidade * 2); 
+            redimensiona(capacidade * 2);
         } else if ((sizeVermelha() + sizePetra()) <= capacidade / 3 && capacidade > 4) {
-            redimensiona(capacidade / 2); 
+            redimensiona(capacidade / 2);
         }
     }
 

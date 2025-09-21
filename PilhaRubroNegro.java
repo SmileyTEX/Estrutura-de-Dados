@@ -22,4 +22,6 @@ public interface PilhaRubroNegro {
     public void pushVermelha(Object o);
     public void pushPetra(Object o);
     public Object popVermelha() throws PilhaRubroNegroVaziaExcecao;
+    public Object popPetra() throws PilhaRubroNegroVaziaExcecao;
+}
 }
